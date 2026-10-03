@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار الهدايا الفنية | هدايا تُصنع بحب</title>
+<meta name="description" content="دار الهدايا الفنية - هدايا فنية مخصصة من الفخار والماق والدفاتر واللوحات">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #fbf8f3;
+    color: #40372f;
+    line-height: 1.8;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    width: 100%;
+    display: block;
+}
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(251,248,243,.97);
+    border-bottom: 1px solid #e8ded2;
+    backdrop-filter: blur(10px);
+}
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #705743;
+    white-space: nowrap;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    font-size: 15px;
+}
+.nav-links a:hover {
+    color: #a57955;
+}
+.nav-button {
+    background: #705743;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+}
+/* HERO */
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background:
+        linear-gradient(rgba(55,43,34,.48),rgba(55,43,34,.48)),
+        url("https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+}
+.hero-content {
+    max-width: 800px;
+}
+.hero h1 {
+    font-size: clamp(38px,6vw,70px);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.hero p {
+    font-size: clamp(18px,3vw,25px);
+    margin-bottom: 35px;
+}
+.hero-button {
+    display: inline-block;
+    background: #f4e5d2;
+    color: #5c4634;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+/* GENERAL */
+section {
+    padding: 80px 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.section-title h2 {
+    font-size: 34px;
+    color: #604a38;
+    margin-bottom: 10px;
+}
+.section-title p {
+    color: #81756a;
+}
+/* CATEGORIES */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+.category-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(80,60,40,.08);
+    transition: .3s;
+}
+.category-card:hover {
+    transform: translateY(-8px);
+}
+.category-card img {
+    height: 230px;
+    object-fit: cover;
+}
+.category-content {
+    padding: 20px;
+    text-align: center;
+}
+.category-content h3 {
+    color: #654c39;
+    margin-bottom: 7px;
+}
+.category-content p {
+    color: #84786c;
+    font-size: 14px;
+}
+/* PACKAGES */
+.packages-section,
+.reviews-section {
+    background: #f2ebe3;
+}
+.packages {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.package-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(80,60,40,.08);
+}
+.package-card .icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.package-card h3 {
+    color: #654c39;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.package-card p {
+    color: #81756a;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.package-button {
+    display: inline-block;
+    background: #705743;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+}
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.feature {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #eee3d8;
+}
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.feature h3 {
+    color: #654c39;
+    margin-bottom: 8px;
+}
+.feature p {
+    color: #81756a;
+    font-size: 14px;
+}
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(80,60,40,.08);
+    transition: .3s;
+}
+.product-card:hover {
+    transform: translateY(-6px);
+}
+.product-card img {
+    height: 260px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+.product-info h3 {
+    color: #654c39;
+    margin-bottom: 8px;
+}
+.product-info p {
+    color: #81756a;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.price {
+    display: block;
+    color: #9b704f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.whatsapp-button {
+    display: inline-block;
+    background: #705743;
+    color: white;
+    padding: 9px 20px;
+    border-radius: 25px;
+}
+/* REVIEWS */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.review {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    text-align: center;
+}
+.review-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #d9c2ab;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.stars {
+    margin: 8px 0;
+}
+.review p {
+    color: #766b61;
+    font-size: 14px;
+}
+/* STEPS */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+}
+.step {
+    text-align: center;
+    padding: 25px 15px;
+}
+.step-number {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #705743;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.step h3 {
+    font-size: 17px;
+    color: #654c39;
+}
+/* CONTACT */
+.contact-section {
+    background: #604a38;
+    color: white;
+    text-align: center;
+}
+.contact-section h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+.contact-section p {
+    color: #eee2d5;
+    margin-bottom: 30px;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.contact-button {
+    background: #f4e5d2;
+    color: #604a38;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+/* FOOTER */
+footer {
+    background: #3d3027;
+    color: #ddd0c4;
+    padding: 45px 20px 25px;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+.footer-content h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+.footer-links {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.copyright {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #66564a;
+    text-align: center;
+    font-size: 13px;
+}
+/* WHATSAPP */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+/* MOBILE */
+@media(max-width:900px) {
+    .nav-links {
+        display: none;
+    }
+    .categories {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .packages {
+        grid-template-columns: 1fr;
+    }
+    .features {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .products {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+    .steps {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width:600px) {
+    .navbar {
+        padding: 15px;
+    }
+    .logo {
+        font-size: 19px;
+    }
+    .hero {
+        min-height: 580px;
+    }
+    section {
+        padding: 60px 15px;
+    }
+    .section-title h2 {
+        font-size: 27px;
+    }
+    .categories,
+    .features,
+    .products {
+        grid-template-columns: 1fr;
+    }
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<div class="logo">دار الهدايا الفنية</div>
+<ul class="nav-links">
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#categories">المنتجات</a></li>
+<li><a href="#packages">الباقات</a></li>
+<li><a href="#about">من نحن</a></li>
+<li><a href="#contact">تواصل معنا</a></li>
+</ul>
+<a href="#contact" class="nav-button">صمّمي هديتك</a>
+</nav>
+</header>
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>
+هدايا تُصنع بحب…<br>
+وتُقدَّم بروح الفن.
+</h1>
+<p>
+هدايا فنية مخصصة تحمل اسمك، عبارتك، ومشاعرك
+</p>
+<a href="#categories" class="hero-button">
+ابدئي التخصيص الآن
+</a>
+</div>
+</section>
+<section id="categories">
+<div class="container">
+<div class="section-title">
+<h2>اكتشفي عالم الهدايا الفنية</h2>
+<p>اختاري القطعة التي تعبّر عنك</p>
+</div>
+<div class="categories">
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85">
+<div class="category-content">
+<h3>🏺 أكواب فخارية</h3>
+<p>لمسة فنية تُحفر باليد</p>
+</div>
+</div>
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85">
+<div class="category-content">
+<h3>☕ ماق نحت وطباعة</h3>
+<p>تصميمك… على ماقك</p>
+</div>
+</div>
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=85">
+<div class="category-content">
+<h3>📔 دفاتر ومذكرات</h3>
+<p>دفتر بتصميم خاص وعبارات تشجيعية</p>
+</div>
+</div>
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988a5?auto=format&fit=crop&w=900&q=85">
+<div class="category-content">
+<h3>🖼️ لوحات فنية</h3>
+<p>اقتباسات مطبوعة أو مطرزة أو إكلرك</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="packages-section" id="packages">
+<div class="container">
+<div class="section-title">
+<h2>باقات جاهزة للهدايا</h2>
+<p>اختاري الباقة واتركي علينا التفاصيل</p>
+</div>
+<div class="packages">
+<div class="package-card">
+<div class="icon">🎓</div>
+<h3>باقة النجاح</h3>
+<p>ماق نحت + دفتر + لوحة + تغليف فاخر</p>
+<a href="#contact" class="package-button">اطلب الآن</a>
+</div>
+<div class="package-card">
+<div class="icon">🌷</div>
+<h3>باقة اليوم الجميل</h3>
+<p>كوب فخار + بطاقة اقتباس + تنسيق هدية</p>
+<a href="#contact" class="package-button">اطلب الآن</a>
+</div>
+<div class="package-card">
+<div class="icon">🎁</div>
+<h3>باقة شخصية</h3>
+<p>منتج واحد مخصص + بطاقة + تغليف بسيط</p>
+<a href="#contact" class="package-button">اطلب الآن</a>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="container">
+<div class="section-title">
+<h2>لماذا دار الهدايا الفنية؟</h2>
+<p>لأن الهدية أجمل عندما تحمل لمستك الخاصة</p>
+</div>
+<div class="features">
+<div class="feature">
+<div class="feature-icon">🖌️</div>
+<h3>نحت يدوي</h3>
+<p>تفاصيل فنية تُنفذ بعناية</p>
+</div>
+<div class="feature">
+<div class="feature-icon">✨</div>
+<h3>تصميم حسب الطلب</h3>
+<p>نحوّل فكرتك إلى قطعة خاصة</p>
+</div>
+<div class="feature">
+<div class="feature-icon">🎀</div>
+<h3>تغليف فاخر</h3>
+<p>تفاصيل جميلة من أول لحظة</p>
+</div>
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>تنفيذ سريع</h3>
+<p>نحرص على تجهيز طلبك في الوقت المناسب</p>
+</div>
+<div class="feature">
+<div class="feature-icon">💎</div>
+<h3>جودة عالية</h3>
+<p>نختار الخامات بعناية</p>
+</div>
+<div class="feature">
+<div class="feature-icon">🌿</div>
+<h3>لمسة فنية فريدة</h3>
+<p>كل قطعة لها حكايتها الخاصة</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="section-title">
+<h2>منتجات مميزة</h2>
+<p>اختيارات فنية صنعت لتُهدى</p>
+</div>
+<div class="products">
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>كوب فخار منحوت</h3>
+<p>تصميم يدوي مخصص</p>
+<span class="price">ابتداءً من 65 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>ماق طباعة</h3>
+<p>اسمك أو عبارتك المفضلة</p>
+<span class="price">ابتداءً من 45 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>دفتر تشجيعي</h3>
+<p>دفتر بتصميم خاص</p>
+<span class="price">ابتداءً من 35 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988a5?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>لوحة إكلرك</h3>
+<p>قطعة فنية مميزة</p>
+<span class="price">ابتداءً من 75 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>لوحة تطريز</h3>
+<p>تصميم يدوي خاص</p>
+<span class="price">ابتداءً من 90 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=900&q=85">
+<div class="product-info">
+<h3>بطاقة اقتباس</h3>
+<p>كلمات جميلة لمن تحبين</p>
+<span class="price">ابتداءً من 15 ر.س</span>
+<a href="#contact" class="whatsapp-button">اطلب عبر واتساب</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="reviews-section">
+<div class="container">
+<div class="section-title">
+<h2>آراء عملائنا</h2>
+<p>تجارب جميلة من أشخاص اختاروا أن يهدوا بفن</p>
+</div>
+<div class="reviews">
+<div class="review">
+<div class="review-avatar">👩🏻</div>
+<h3>سارة</h3>
+<div class="stars">★★★★★</div>
+<p>التغليف كان خيال… والهدية طلعت أحلى من المتوقع.</p>
+</div>
+<div class="review">
+<div class="review-avatar">👩🏻</div>
+<h3>نورة</h3>
+<div class="stars">★★★★★</div>
+<p>أعجبني جدًا الاهتمام بالتفاصيل والتصميم الخاص.</p>
+</div>
+<div class="review">
+<div class="review-avatar">👩🏻</div>
+<h3>ريم</h3>
+<div class="stars">★★★★★</div>
+<p>الهدية كانت جميلة جدًا ووصلتني بالشكل الذي تخيلته.</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="section-title">
+<h2>كيف تطلبين؟</h2>
+<p>خمس خطوات بسيطة لهدية مميزة</p>
+</div>
+<div class="steps">
+<div class="step">
+<div class="step-number">1</div>
+<h3>اختاري المنتج</h3>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>حددي التخصيص</h3>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>أرسلي الاسم أو العبارة</h3>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<h3>تأكيد الطلب</h3>
+</div>
+<div class="step">
+<div class="step-number">5</div>
+<h3>التنفيذ والشحن</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="container">
+<h2>صمّمي هديتك معنا 🎁</h2>
+<p>
+أخبرينا بفكرتك وسنساعدك في تحويلها إلى هدية فنية مميزة.
+</p>
+<div class="contact-buttons">
+<a href="https://wa.me/966597816556" class="contact-button">
+واتساب
+</a>
+<a href="https://instagram.com/" class="contact-button">
+إنستغرام
+</a>
+<a href="mailto:Fzfz1425@gmail.com" class="contact-button">
+البريد الإلكتروني
+</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-content">
+<div>
+<h3>دار الهدايا الفنية</h3>
+<p>
+هدايا تُصنع بحب، وتُقدَّم بروح الفن.
+نصنع لك قطعًا تحمل معنى خاصًا.
+</p>
+</div>
+<div>
+<h3>روابط سريعة</h3>
+<ul class="footer-links">
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#categories">المنتجات</a></li>
+<li><a href="#packages">الباقات</a></li>
+<li><a href="#about">من نحن</a></li>
+<li><a href="#contact">تواصل معنا</a></li>
+</ul>
+</div>
+<div>
+<h3>معلومات</h3>
+<ul class="footer-links">
+<li><a href="#">سياسة الاسترجاع</a></li>
+<li><a href="#">سياسة الخصوصية</a></li>
+<li><a href="#">الشروط والأحكام</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+© 2026 دار الهدايا الفنية — جميع الحقوق محفوظة
+</div>
+</footer>
+<a href="https://wa.me/966597816556" class="floating-whatsapp">
+☎
+</a>
+</body>
+</html>
